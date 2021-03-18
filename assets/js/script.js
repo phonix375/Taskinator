@@ -1,8 +1,11 @@
- var buttonEl = document.querySelector('#save-task');
- console.log(buttonEl);
+var buttonEl = document.querySelector('#save-task');
+var tasksToDoEl = document.querySelector('#tasks-to-do');
 
- buttonEl.addEventListener('click', function(){
-     var taskItemEl  = document.createElement('li');
-     taskItemEl.textContent = 'new task';
-     var tasksToDoEl = document.querySelector("#tasks-to-do");
- })
+var createTaskHandler = function(){
+    var taskItemEl  = document.createElement('li');
+    taskItemEl.className = "task-item";
+    taskItemEl.textContent = 'this is a new task';
+    tasksToDoEl.appendChild(taskItemEl);
+}
+
+ buttonEl.addEventListener('click', createTaskHandler)
